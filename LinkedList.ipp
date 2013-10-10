@@ -113,11 +113,9 @@ void LinkedList<T>::splice(unsigned long i, unsigned long len, LinkedList<T>& ta
 	Node* startOfLeavingSegment = find(i);
 	Node* endOfLeavingSegment = find(i+len-1);
 	Node* indexOfAddition = target.find(t);
-
 	startOfLeavingSegment->prev -> next = endOfLeavingSegment -> next;
 	endOfLeavingSegment-> next-> prev = startOfLeavingSegment -> prev;
 	numItems = numItems - (len);
-
 	indexOfAddition -> prev -> next = startOfLeavingSegment;
 	startOfLeavingSegment-> prev = indexOfAddition-> prev;
 	endOfLeavingSegment-> next = indexOfAddition;
